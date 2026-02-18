@@ -13,6 +13,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Actor {
@@ -24,6 +26,9 @@ public class Actor {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate deadDate;
 
     private String country;
 
@@ -63,6 +68,10 @@ public class Actor {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    public LocalDate getDeadDate() {return deadDate;}
+
+    public void setDeadDate(LocalDate deadDate) {this.deadDate = deadDate;}
 
     public String getCountry() {
         return country;
